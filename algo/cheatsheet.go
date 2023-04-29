@@ -62,6 +62,36 @@ func typeEtVariables() {
 
 // ------------------- //
 
+// opérateurs
+func operateurs() {
+	// opérateurs arithmétiques : +, -, *, /, % (modulo)
+	// opérateurs de comparaison : ==, !=, <, >, <=, >=
+	// opérateurs logiques : &&, ||, !
+
+	// /!\ on ne peut pas mélanger les types
+	// 42 + 42.0 n'est pas possible
+	// il faut convertir les types
+	var age int = 42
+	var age2 float64 = 42.0
+	age3 := age + int(age2)
+	_ = age3
+
+	// on peut utiliser les opérateurs de comparaison sur les strings
+	// mais attention, ça ne compare pas l'ordre alphabétique
+	// ça compare l'ordre des caractères dans la table ASCII
+	fmt.Println("a" < "b") // affiche true
+	fmt.Println("a" < "B") // affiche false
+	fmt.Println("coucou" < "c") // affiche false
+	fmt.Println("coucou" < "coucou") // affiche false
+	fmt.Println("coucou" < "coucouuuuu") // affiche true
+
+
+	// la concaténation de strings se fait avec le symbole +
+	fmt.Println("coucou" + " " + "toi") // affiche coucou toi
+}
+
+// ------------------- //
+
 // affichage sortie standard
 func affichage() {
 	// le package fmt correspond à la librairie standard de Go pour afficher des messages
@@ -408,5 +438,5 @@ func packageOs() {
 // ------------------- //
 
 func main() {
-	packageOs()
+	operateurs()
 }
